@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Student:</b>
+  <%= @detention.student %>
+</p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @detention.teacher %>
+</p>
+
+<p>
+  <b>Reason:</b>
+  <%= @detention.reason %>
+</p>
+
+
+<%= link_to 'Edit', edit_detention_path(@detention) %> |
+<%= link_to 'Back', detentions_path %>

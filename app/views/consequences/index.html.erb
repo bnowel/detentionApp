@@ -1,0 +1,28 @@
+<h1>Listing consequences</h1>
+
+<table>
+  <tr>
+    <th>Detention count</th>
+    <th>Description</th>
+    <th>Notification list</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consequences.each do |consequence| %>
+  <tr>
+    <td><%= consequence.detention_count %></td>
+    <td><%= consequence.description %></td>
+    <td><%= consequence.notification_list %></td>
+    <td><%= link_to 'Show', consequence %></td>
+    <td><%= link_to 'Edit', edit_consequence_path(consequence) %></td>
+    <td><%= link_to 'Destroy', consequence, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consequence', new_consequence_path %><br/>
+<%= link_to 'Home', '/' %>

@@ -1,0 +1,29 @@
+<%= form_for(@detention) do |f| %>
+  <% if @detention.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@detention.errors.count, "error") %> prohibited this detention from being saved:</h2>
+
+      <ul>
+      <% @detention.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :student %><br />
+    <%= select(:detention, :student_id, Student.all.collect {|s| ["#{s}", s.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher %><br />
+    <%= select(:detention, :teacher_id, Teacher.all.collect {|t| ["#{t}", t.id] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.text_area :reason %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

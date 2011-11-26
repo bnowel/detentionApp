@@ -1,0 +1,29 @@
+<%= form_for(@consequence) do |f| %>
+  <% if @consequence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consequence.errors.count, "error") %> prohibited this consequence from being saved:</h2>
+
+      <ul>
+      <% @consequence.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :detention_count %><br />
+    <%= f.number_field :detention_count %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :notification_list %><br />
+    <%= f.text_field :notification_list %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

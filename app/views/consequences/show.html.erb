@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Detention count:</b>
+  <%= @consequence.detention_count %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @consequence.description %>
+</p>
+
+<p>
+  <b>Notification list:</b>
+  <%= @consequence.notification_list %>
+</p>
+
+
+<%= link_to 'Edit', edit_consequence_path(@consequence) %> |
+<%= link_to 'Back', consequences_path %>

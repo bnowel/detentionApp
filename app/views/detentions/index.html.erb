@@ -1,0 +1,29 @@
+<h1>Listing detentions</h1>
+
+<table>
+  <tr>
+    <th>Student</th>
+    <th>Teacher</th>
+    <th>Reason</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @detentions.each do |detention| %>
+  <tr>
+    <td><%= detention.student %></td>
+    <td><%= detention.teacher %></td>
+    <td><%= detention.reason %></td>
+    <td><%= link_to 'Show', detention %></td>
+    <td><%= link_to 'Edit', edit_detention_path(detention) %></td>
+    <td><%= link_to 'Destroy', detention, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Detention', new_detention_path %> <br />
+<%= link_to 'Home', '/' %>
+

@@ -13,7 +13,11 @@ class Student < ActiveRecord::Base
     full_name
   end
   
+  def detentions
+    Detention.where(:student_id => id)
+  end
+  
   def detention_count
-    Detention.where(:student_id => id).length
+    detentions.length
   end
 end

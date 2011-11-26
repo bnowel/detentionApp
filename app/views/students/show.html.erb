@@ -16,10 +16,10 @@
 </p>
 <p>
   <% detentions = Detention.where(:student_id => @student.id) %>
-  <b>Detentions:</b>
-  <% if detentions.length > 0 then %>
+  <b>Detentions: </b><%= @student.detention_count %>
+  <% if @student.detention_count > 0 then %>
     <ul>
-    <% detentions.each do |detention| %>
+    <% @student.detentions.each do |detention| %>
       <li><%= detention.teacher %><br /><%= detention.reason %></li>
     <% end %>
     </ul>

@@ -10,12 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111113183703) do
+ActiveRecord::Schema.define(:version => 20111128060911) do
 
   create_table "consequences", :force => true do |t|
     t.integer  "detention_count"
     t.string   "description"
     t.string   "notification_list"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "consequences_notices", :id => false, :force => true do |t|
+    t.integer  "consequence_id"
+    t.integer  "notice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,6 +37,13 @@ ActiveRecord::Schema.define(:version => 20111113183703) do
 
   add_index "detentions", ["student_id"], :name => "index_detentions_on_student_id"
   add_index "detentions", ["teacher_id"], :name => "index_detentions_on_teacher_id"
+
+  create_table "notices", :force => true do |t|
+    t.string   "subject"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "students", :force => true do |t|
     t.string   "firstName"

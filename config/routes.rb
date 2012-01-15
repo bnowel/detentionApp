@@ -1,4 +1,6 @@
 DetentionApp::Application.routes.draw do
+  resources :notices
+
   resources :consequences
 
   get "home/index"

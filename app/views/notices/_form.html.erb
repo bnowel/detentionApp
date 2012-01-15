@@ -20,7 +20,7 @@
     <%= f.text_area :body %>
   </div>
   <div class="field">
-      <%= select(:notice, "test", Consequence.all.collect {|c| ["#{c}", c.id] }) %>
+      <%= select(@notice, :consequence_id, Consequence.all.collect {|c| [c.description, c.id] }) %>
   </div>
   <div class="actions">
     <%= f.submit %>
